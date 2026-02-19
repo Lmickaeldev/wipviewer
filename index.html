@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Wipe Village — irbas1er</title>
+    <meta name="description" content="Wipe Village irbas1er — Event Rust" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- BACKDROP -->
+    <div class="backdrop" aria-hidden="true">
+        <div class="grain"></div>
+        <div class="vignette"></div>
+        <div class="embers"></div>
+    </div>
+
+    <!-- TOP OVERLAY BAR -->
+    <header class="topbar">
+        <div class="topbar__left">
+            <img class="topbar__logo" src="assets/irbas1er-icon.png" alt="irbas1er" />
+            <div class="topbar__brand">
+                <div class="topbar__title">WIPE VILLAGE</div>
+                <div class="topbar__sub">irbas1er • Rust • 19 mars 11:00</div>
+            </div>
+        </div>
+
+        <div class="topbar__right">
+            <div class="live">
+                <span class="live__dot"></span>
+                <span id="hudStatus">CANDIDATURES OUVERTES</span>
+            </div>
+
+            <a class="chip" href="#rules">RÈGLEMENT</a>
+            <a class="chip chip--hot" href="#apply">CANDIDATER</a>
+            <!-- <button class="chip" id="themeBtn" type="button" title="Thème">🌗</button> -->
+        </div>
+    </header>
+
+    <!-- EVENT HERO -->
+    <main class="event">
+        <section class="hero">
+            <!-- Big banner (IRBAS1ER fire) -->
+            <div class="hero__banner">
+                <img src="assets/irbas1er-banner.webp" alt="irbas1er banner" />
+                <div class="hero__overlay"></div>
+
+                <div class="hero__content">
+                    <div class="kicker">ÉVÉNEMENT COMMU • RUST • VIEWERS</div>
+
+                    <h1 class="title">
+                        WIPE <span class="title__gold">VILLAGE</span>
+                    </h1>
+
+                    <p class="lead">
+                        Un wipe propre, stylé, et Twitch-safe.
+                        Si tu viens : <strong>team village</strong>, pas team drama.
+                    </p>
+
+                    <div class="metaRow">
+                        <div class="metaPill">
+                            <span class="metaKey">DATE</span>
+                            <span class="metaVal" id="wipeDateText">19 MARS • 11:00 (PARIS)</span>
+                        </div>
+                        <div class="metaPill">
+                            <span class="metaKey">SÉLECTION</span>
+                            <span class="metaVal">FORMULAIRE → DISCORD</span>
+                        </div>
+                    </div>
+
+                    <div class="ctaRow">
+                        <a class="cta cta--primary" href="#apply">🔥 CANDIDATER</a>
+                        <a class="cta cta--ghost" href="#rules">📜 LIRE LE RÈGLEMENT</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right neon feature (HOLY style) + timer crate -->
+            <div class="hero__side">
+                <div class="neonFrame">
+                    <div class="neonFrame__bg">
+                        <img src="assets/irbas1er-holy.png" alt="" />
+                    </div>
+
+                    <div class="neonFrame__top">
+                        <div class="neonTag">debut de l'évent</div>
+                        <div class="neonSmall" id="wipeStatusText">Cap sur le wipe…</div>
+                    </div>
+
+                    <!-- TON TIMER -->
+                    <div class="crate">
+                        <div id="timer-wrap" aria-live="polite">
+                            <div id="screen">
+                                <div id="boot-lines">
+                                    <div>c:\rust\event\wipe_village.exe</div>
+                                    <div>c:\rust\auth\irbas1er</div>
+                                    <div>c:\rust\sync\discord</div>
+                                    <div class="status" id="bootStatus">» bruteforce attack initiated...</div>
+                                </div>
+                                <div id="time">--:--:--</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="warning">
+                        ⚠️ CHEAT / TOXIC / DRAMA = REFUS DIRECT
+                    </div>
+                </div>
+
+                <!-- Stream Buttons (overlay style) -->
+                <div class="linkGrid" id="streamLinks"></div>
+            </div>
+        </section>
+
+        <!-- LOWER STRIP: rules + form -->
+        <section class="lower">
+            <section class="panel" id="rules">
+                <div class="panel__head">
+                    <div class="panel__title">RÈGLEMENT</div>
+                    <div class="panel__badge">à lire</div>
+                </div>
+
+                <div class="panel__body rules">
+                    <h3>base</h3>
+                    <div class="rule">
+                        <div class="rule__num">01</div>
+                        <div class="rule__txt">
+                            <strong>Respect total</strong>
+                            <span>Pas d’insultes, harcèlement, menaces, haine/discrimination.</span>
+                        </div>
+                    </div>
+
+
+                    <div class="rule">
+                        <div class="rule__num">02</div>
+                        <div class="rule__txt">
+                            <strong>Stream & communauté</strong>
+                            <span>Comportement compatible Twitch. Pas de contenu choquant.</span>
+                            
+                        </div>
+                    </div>
+
+                    <div class="rule">
+                        <div class="rule__num">03</div>
+                        <div class="rule__txt">
+                            <strong>Vie privée</strong>
+                            <span>Pas d’infos IRL, doxx, menaces IRL.</span>
+                        </div>
+                    </div>
+                    <h3>jeux</h3>
+                    <div class="rule">
+                        <div class="rule__num">04</div>
+                        <div class="rule__txt">
+                            <strong>Infos</strong>
+                            <span>SteamID / Discord corrects. Mensonge = refus.</span>
+                        </div>
+                    </div>
+                    <div class="rule">
+                        <div class="rule__num">05</div>
+                        <div class="rule__txt">
+                            <strong>Jeu propre</strong>
+                            <span>Pas de cheat, scripts, exploit, abus de bugs.</span>
+                            <span>aucune divulgation d'informations ip / server/ code portes.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel panel--hot" id="apply">
+                <div class="panel__head">
+                    <div class="panel__title">FORMULAIRE VIEWER</div>
+                    <div class="panel__badge">SEND → DISCORD</div>
+                </div>
+
+                <div class="panel__body">
+                    <form id="applyForm" class="form">
+                        <div class="grid2">
+                            <div class="field">
+                                <label for="twitchName">Nom Twitch *</label>
+                                <input id="twitchName" required placeholder="ex: irbas1er_fan" />
+                            </div>
+                            <div class="field">
+                                <label for="discordName">Nom Discord *</label>
+                                <input id="discordName" required placeholder="ex: pseudo#1234 ou @pseudo" />
+                            </div>
+                        </div>
+
+                        <div class="grid2">
+                            <div class="field">
+                                <label for="hours">Nb heures / dispo *</label>
+                                <input id="hours" required placeholder="ex: 2000h / 3 soirs semaine" />
+                            </div>
+                            <div class="field">
+                                <label for="steamId">SteamID *</label>
+                                <input id="steamId" required placeholder="ex: 7656119..." />
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="whyWipe">Pourquoi faire le wipe ? *</label>
+                            <textarea id="whyWipe" required
+                                placeholder="Objectif, style de jeu, rôle, mentalité…"></textarea>
+                        </div>
+
+                        <div class="field">
+                            <label for="aboutYou">Parle de toi *</label>
+                            <textarea id="aboutYou" required
+                                placeholder="Expérience Rust, comportement, horaires…"></textarea>
+                        </div>
+
+                        <div class="grid2">
+                            <div class="field">
+                                <span class="labelLike">a tu deja participé à un Wipe Village ?</span>
+                                <div class="choices">
+                                    <label class="choice">
+                                        <input type="radio" name="wipeVillage" value="oui" required />
+                                        <span>OUI</span>
+                                    </label>
+                                    <label class="choice">
+                                        <input type="radio" name="wipeVillage" value="non" required />
+                                        <span>NON</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="field hidden" id="withWhoWrap">
+                                <label for="withWho">avec qui ? *</label>
+                                <input id="withWho" placeholder="Pseudo(s) / team / potes…" />
+                            </div>
+                        </div>
+
+                        <label class="check">
+                            <input id="rulesAccept" type="checkbox" required />
+                            <span>J’ai lu et j’accepte le règlement *</span>
+                        </label>
+
+                        <!-- honeypot -->
+                        <input class="hp" id="website" autocomplete="off" tabindex="-1" />
+
+                        <button id="sendBtn" class="send" type="submit">
+                            <span class="spinner" aria-hidden="true"></span>
+                            <span id="btnText">ENVOYER</span>
+                        </button>
+
+                        <div id="status" class="status" role="status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </section>
+        </section>
+
+        <footer class="footer">
+            © <span id="year"></span> • Wipe Village — irbas1er
+        </footer>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat nostrum voluptas beatae hic modi obcaecati perferendis magnam harum exercitationem. Officia qui similique itaque. Deleniti aspernatur repudiandae atque impedit ratione ipsam.

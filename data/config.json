@@ -1,0 +1,13 @@
+{
+  "discordWorkerEndpoint": "https://snowy-bonus-bde5.mickael60000lachevre.workers.dev/",
+  "hudStatus": "CANDIDATURES OUVERTES",
+  "wipeStatusText": "Cap sur le wipe…",
+  "wipeDateText": "19 MARS • 11:00 (PARIS)",
+  "links": [
+    { "title": "TWITCH", "sub": "Viens sur le stream", "img": "assets/icons/twitch.png", "href": "https://www.twitch.tv/irbas1er" },
+    { "title": "DISCORD", "sub": "Rejoindre la commu", "img": "assets/icons/discord.png", "href": "https://discord.com/invite/tzPGaWaEgf" },
+    { "title": "TIKTOK", "sub": "Clips & extraits", "img": "assets/icons/tiktok.png", "href": "https://www.tiktok.com/@irbas1er?lang=fr" },
+    { "title": "YOUTUBE", "sub": "Vidéos", "img": "assets/icons/youtube.png", "href": "https://www.youtube.com/@irbas1er" }
+  ]
+}
+
